@@ -10,4 +10,3 @@ const TaskSchema = Schema({
   }
 });
 module.exports = mongoose.model("tasks", TaskSchema);
-alert(TaskSchema.description)
