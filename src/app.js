@@ -5,9 +5,9 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-// conexion a la base de datos, no es necesario crear la base de datos previamente
+// conexion a la base de datos, no es necesario crear la base de datos previamente, Mongo db la crea
 mongoose.connect('mongodb://localhost/crud-mongo')
-  .then(db => console.log('db connected'))
+  .then(db => console.log('Base de datos conectada'))
   .catch(err => console.log(err));
 
 // importing routes
