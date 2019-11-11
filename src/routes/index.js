@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../model/task');
-
+// 
 router.get('/', async (req, res) => {
   const tasks = await Task.find();
   res.render('index', {
@@ -42,5 +42,5 @@ router.get('/delete/:id', async (req, res, next) => {
   res.redirect('/');
 });
 
-
+//exportar la ruta
 module.exports = router;

@@ -5,20 +5,20 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-// connection to db
+// conexion a la base de datos, no es necesario crear la base de datos previamente, Mongo db la crea
 mongoose.connect('mongodb://localhost/crud-mongo')
-  .then(db => console.log('db connected'))
+  .then(db => console.log('Base de datos conectada'))
   .catch(err => console.log(err));
 
 // importing routes
 const indexRoutes = require('./routes/index');
 
-// settings
+// configuracion usando express ; se configura el puerto y las vistas
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// middlewares
+// rutas y proceso de datos, se muestran los daton en consola antes de entrar a la aplicacion,tomando el tiempo
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 
