@@ -20,7 +20,8 @@ app.set('view engine', 'ejs');
 
 // rutas y proceso de datos, se muestran los daton en consola antes de entrar a la aplicacion,tomando el tiempo
 app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: false}));
+
 // routes
 app.use('/', indexRoutes);
 
